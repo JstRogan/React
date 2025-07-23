@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Главная",
+    "cars": "Автомобили",
+    "about": "О нас",
+    "contact": "Контакты",
+    "profile": "Профиль",
+    "logout": "Выйти",
+    "login": "Войти"
+  },
+  "home": {
+    "title": "Добро пожаловать в аренду автомобилей",
+    "subtitle": "Найдите идеальный автомобиль для вашего путешествия",
+    "bookNow": "Забронировать",
+    "popularCars": "Популярные автомобили",
+    "viewAll": "Посмотреть все"
+  },
+  "auth": {
+    "loginTitle": "Вход",
+    "registerTitle": "Регистрация",
+    "email": "Электронная почта",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "fullName": "Полное имя",
+    "login": "Войти",
+    "register": "Зарегистрироваться",
+    "logout": "Выйти",
+    "noAccount": "Нет аккаунта?",
+    "hasAccount": "Уже есть аккаунт?",
+    "loginLink": "Войти здесь",
+    "registerLink": "Зарегистрироваться здесь"
+  },
+  "profile": {
+    "title": "Профиль",
+    "myBookings": "Мои бронирования",
+    "noBookings": "У вас пока нет бронирований.",
+    "browseCars": "Просмотреть автомобили",
+    "pickup": "Получение:",
+    "dropoff": "Возврат:",
+    "totalBookings": "Всего бронирований",
+    "totalSpent": "Всего потрачено",
+    "memberSince": "Участник с",
+    "pleaseLogin": "Пожалуйста, войдите, чтобы просмотреть свой профиль",
+    "goToLogin": "Перейти к входу"
+  },
+  "filters": "Фильтры",
+  "brand": "Марка",
+  "allBrands": "Все марки",
+  "allTypes": "Все типы",
+  "priceRange": "Диапазон цен",
+  "clearFilters": "Очистить фильтры",
+  "noCarsFound": "Автомобили не найдены",
+  "tryAdjustingFilters": "Попробуйте изменить фильтры",
+  "cars": {
+    "title": "Популярные автомобили",
+    "viewAll": "Посмотреть все",
+    "rentNow": "Арендовать",
+    "perDay": "/день",
+    "gasoline": "Бензин",
+    "manual": "Механическая",
+    "automatic": "Автоматическая",
+    "people": "Человек",
+    "filters": {
+      "transmission": "Коробка передач",
+      "fuel": "Тип топлива"
+    },
+    "details": {
+      "specifications": "Характеристики",
+      "transmission": "Коробка передач",
+      "fuel": "Тип топлива",
+      "seats": "Места",
+      "year": "Год"
+    }
+  },
+  "carDetail": {
+    "rentNow": "Арендовать",
+    "reviews": "Отзывы",
+    "description": "Описание",
+    "specifications": "Характеристики",
+    "recentCars": "Недавние автомобили"
+  },
+  "booking": {
+    "title": "Бронирование автомобиля",
+    "billingInfo": "Платежная информация",
+    "rentalInfo": "Информация об аренде",
+    "paymentMethod": "Способ оплаты",
+    "confirmation": "Подтверждение",
+    "pickUp": "Получение",
+    "dropOff": "Возврат",
+    "locations": "Местоположения",
+    "date": "Дата",
+    "time": "Время",
+    "selectCity": "Выберите ваш город",
+    "rentNow": "Арендовать сейчас",
+    "bookNow": "Забронировать",
+    "success": "Бронирование успешно!",
+    "pickupLocation": "Место получения",
+    "dropoffLocation": "Место возврата",
+    "pickupDate": "Дата получения",
+    "dropoffDate": "Дата возврата",
+    "totalPrice": "Общая стоимость"
+  },
+  "footer": {
+    "about": "О нас",
+    "community": "Сообщество",
+    "socials": "Социальные сети",
+    "howItWorks": "Как это работает",
+    "featured": "Рекомендуемое",
+    "partnership": "Партнерство",
+    "business": "Деловые отношения",
+    "events": "События",
+    "blog": "Блог",
+    "podcast": "Подкаст",
+    "invite": "Пригласить друга",
+    "discord": "Discord",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "privacy": "Конфиденциальность",
+    "terms": "Условия использования",
+    "copyright": "©2022 MORENT. Все права защищены"
+  }
+}
