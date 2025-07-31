@@ -21,11 +21,11 @@ const CarCard = ({ car }: CarCardProps) => {
       
       <div className="car-rating">
         <div className="stars">
-          {[...Array(5)].map((_, i) => (
-            <span key={i} className={`star ${i < Math.floor(car.rating) ? 'filled' : ''}`}>
-              ★
-            </span>
-          ))}
+          <span className={`star ${1 <= car.rating ? 'filled' : ''}`}>★</span>
+          <span className={`star ${2 <= car.rating ? 'filled' : ''}`}>★</span>
+          <span className={`star ${3 <= car.rating ? 'filled' : ''}`}>★</span>
+          <span className={`star ${4 <= car.rating ? 'filled' : ''}`}>★</span>
+          <span className={`star ${5 <= car.rating ? 'filled' : ''}`}>★</span>
         </div>
         <span className="rating-value">{car.rating.toFixed(1)}</span>
       </div>

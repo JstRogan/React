@@ -20,7 +20,22 @@ const Register = () => {
     e.preventDefault();
     setError('');
 
-    if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
+    if (!formData.name) {
+      setError('Please fill in all fields');
+      return;
+    }
+    
+    if (!formData.email) {
+      setError('Please fill in all fields');
+      return;
+    }
+    
+    if (!formData.password) {
+      setError('Please fill in all fields');
+      return;
+    }
+    
+    if (!formData.confirmPassword) {
       setError('Please fill in all fields');
       return;
     }

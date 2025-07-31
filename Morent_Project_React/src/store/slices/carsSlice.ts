@@ -56,26 +56,40 @@ const carsSlice = createSlice({
       state.filters = { ...state.filters, ...action.payload };
     },
     applyFilters: (state) => {
-      let filtered = state.cars;
+      const filtered: Car[] = [];
       
-      if (state.filters.brand) {
-        filtered = filtered.filter(car => 
-          car.brand.toLowerCase().includes(state.filters.brand.toLowerCase())
-        );
+      for (let i = 0; i < state.cars.length; i++) {
+        const car = state.cars[i];
+        let shouldInclude = true;
+        
+        if (state.filters.brand) {
+          if (!car.brand.toLowerCase().includes(state.filters.brand.toLowerCase())) {
+            shouldInclude = false;
+          }
+        }
+        
+        if (shouldInclude && state.filters.transmission) {
+          if (car.transmission !== state.filters.transmission) {
+            shouldInclude = false;
+          }
+        }
+        
+        if (shouldInclude && state.filters.fuel) {
+          if (car.fuel !== state.filters.fuel) {
+            shouldInclude = false;
+          }
+        }
+        
+        if (shouldInclude) {
+          if (car.price < state.filters.priceRange[0] || car.price > state.filters.priceRange[1]) {
+            shouldInclude = false;
+          }
+        }
+        
+        if (shouldInclude) {
+          filtered.push(car);
+        }
       }
-      
-      if (state.filters.transmission) {
-        filtered = filtered.filter(car => car.transmission === state.filters.transmission);
-      }
-      
-      if (state.filters.fuel) {
-        filtered = filtered.filter(car => car.fuel === state.filters.fuel);
-      }
-      
-      filtered = filtered.filter(car => 
-        car.price >= state.filters.priceRange[0] && 
-        car.price <= state.filters.priceRange[1]
-      );
       
       state.filteredCars = filtered;
     },

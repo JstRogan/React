@@ -19,7 +19,12 @@ const Login = () => {
     setError('');
 
 
-    if (!formData.email || !formData.password) {
+    if (!formData.email) {
+      setError('Please fill in all fields');
+      return;
+    }
+    
+    if (!formData.password) {
       setError('Please fill in all fields');
       return;
     }

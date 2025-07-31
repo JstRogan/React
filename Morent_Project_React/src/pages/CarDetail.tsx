@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { setSelectedCar, setCars, type Car } from '../store/slices/carsSlice';
+import { setSelectedCar, setCars } from '../store/slices/carsSlice';
 import { setCurrentBooking } from '../store/slices/bookingSlice';
 import { cars as carsData } from '../data/cars';
 import type { RootState } from '../store';
@@ -16,7 +16,13 @@ const CarDetail = () => {
   useEffect(() => {
     dispatch(setCars(carsData));
     if (id) {
-      const car = carsData.find((c: Car) => c.id === id);
+      let car = null;
+      for (let i = 0; i < carsData.length; i++) {
+        if (carsData[i].id === id) {
+          car = carsData[i];
+          break;
+        }
+      }
       if (car) {
         dispatch(setSelectedCar(car));
       }
@@ -48,14 +54,11 @@ const CarDetail = () => {
             <h1>{selectedCar.brand} {selectedCar.model}</h1>
             <div className="car-rating">
               <div className="stars">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <span
-                    key={star}
-                    className={`star ${star <= Math.floor(selectedCar.rating) ? 'filled' : ''}`}
-                  >
-                    ★
-                  </span>
-                ))}
+                <span className={`star ${1 <= selectedCar.rating ? 'filled' : ''}`}>★</span>
+                <span className={`star ${2 <= selectedCar.rating ? 'filled' : ''}`}>★</span>
+                <span className={`star ${3 <= selectedCar.rating ? 'filled' : ''}`}>★</span>
+                <span className={`star ${4 <= selectedCar.rating ? 'filled' : ''}`}>★</span>
+                <span className={`star ${5 <= selectedCar.rating ? 'filled' : ''}`}>★</span>
               </div>
               <span className="rating-value">{selectedCar.rating.toFixed(1)}</span>
               <span className="rating-text">(440+ Reviews)</span>

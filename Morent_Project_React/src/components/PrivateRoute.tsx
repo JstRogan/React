@@ -12,7 +12,15 @@ const PrivateRoute = ({ children }: PrivateRouteProps) => {
 
   const hasToken = localStorage.getItem('authToken');
   
-  return isAuthenticated || hasToken ? <>{children}</> : <Navigate to="/login" replace />;
+  if (isAuthenticated) {
+    return <>{children}</>;
+  }
+  
+  if (hasToken) {
+    return <>{children}</>;
+  }
+  
+  return <Navigate to="/login" replace />;
 };
 
 export default PrivateRoute;

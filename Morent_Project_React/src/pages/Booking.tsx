@@ -37,14 +37,47 @@ const BookingPage = () => {
     e.preventDefault();
     setError('');
     
-    if (!currentBooking?.car || !user) {
+    if (!currentBooking) {
       setError('Missing booking information. Please select a car first.');
       return;
     }
     
-    if (!formData.pickupLocation || !formData.dropoffLocation || 
-        !formData.startDate || !formData.endDate || 
-        !formData.startTime || !formData.endTime) {
+    if (!currentBooking.car) {
+      setError('Missing booking information. Please select a car first.');
+      return;
+    }
+    
+    if (!user) {
+      setError('Missing booking information. Please select a car first.');
+      return;
+    }
+    
+    if (!formData.pickupLocation) {
+      setError('Please fill in all required fields including pickup and drop-off times');
+      return;
+    }
+    
+    if (!formData.dropoffLocation) {
+      setError('Please fill in all required fields including pickup and drop-off times');
+      return;
+    }
+    
+    if (!formData.startDate) {
+      setError('Please fill in all required fields including pickup and drop-off times');
+      return;
+    }
+    
+    if (!formData.endDate) {
+      setError('Please fill in all required fields including pickup and drop-off times');
+      return;
+    }
+    
+    if (!formData.startTime) {
+      setError('Please fill in all required fields including pickup and drop-off times');
+      return;
+    }
+    
+    if (!formData.endTime) {
       setError('Please fill in all required fields including pickup and drop-off times');
       return;
     }
@@ -53,7 +86,12 @@ const BookingPage = () => {
     const endDateTime = new Date(`${formData.endDate}T${formData.endTime}`);
     
 
-    if (isNaN(startDateTime.getTime()) || isNaN(endDateTime.getTime())) {
+    if (isNaN(startDateTime.getTime())) {
+      setError('Please enter valid dates and times');
+      return;
+    }
+    
+    if (isNaN(endDateTime.getTime())) {
       setError('Please enter valid dates and times');
       return;
     }
@@ -79,8 +117,14 @@ const BookingPage = () => {
     }
     
 
-    const durationDays = Math.ceil(durationHours / 24);
-    const days = Math.max(1, durationDays);
+    let durationDays = durationHours / 24;
+    if (durationDays !== parseInt(durationDays.toString())) {
+      durationDays = parseInt(durationDays.toString()) + 1;
+    }
+    let days = durationDays;
+    if (days < 1) {
+      days = 1;
+    }
     const totalPrice = days * currentBooking.car.price;
     
     const newBooking: Booking = {

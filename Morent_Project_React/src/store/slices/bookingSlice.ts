@@ -41,7 +41,13 @@ const bookingSlice = createSlice({
       state.currentBooking = action.payload;
     },
     updateBookingStatus: (state, action: PayloadAction<{ id: string; status: Booking['status'] }>) => {
-      const booking = state.bookings.find(b => b.id === action.payload.id);
+      let booking = null;
+      for (let i = 0; i < state.bookings.length; i++) {
+        if (state.bookings[i].id === action.payload.id) {
+          booking = state.bookings[i];
+          break;
+        }
+      }
       if (booking) {
         booking.status = action.payload.status;
       }

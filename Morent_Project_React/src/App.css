@@ -542,7 +542,7 @@ body {
 }
 
 .rent-btn:hover {
-  background: #2563eb;
+  background: #60a5fa;
 }
 
 
@@ -1053,7 +1053,7 @@ body {
 }
 
 .book-btn:hover {
-  background: #2563eb;
+  background: #60a5fa;
 }
 
 .reviews-section {
@@ -2907,7 +2907,7 @@ body {
    }
    
    .rent-btn:hover {
-     background: #2563eb;
+     background: #60a5fa;
      transform: translateY(-1px);
    }
    

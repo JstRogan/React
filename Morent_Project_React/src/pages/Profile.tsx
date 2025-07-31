@@ -12,7 +12,12 @@ const Profile = () => {
   const user = useAppSelector((state: RootState) => state.auth.user);
   const bookings = useAppSelector((state: RootState) => state.booking.bookings);
   
-  const userBookings = bookings.filter((booking: Booking) => booking.userId === user?.id);
+  const userBookings: Booking[] = [];
+  for (let i = 0; i < bookings.length; i++) {
+    if (bookings[i].userId === user?.id) {
+      userBookings.push(bookings[i]);
+    }
+  }
 
   const handleLogout = () => {
     dispatch(logout());
@@ -105,7 +110,13 @@ const Profile = () => {
             <div className="stat-card">
               <h4>{t('profile.totalSpent')}</h4>
               <span className="stat-number">
-                ${userBookings.reduce((total: number, booking: Booking) => total + booking.totalPrice, 0)}
+                ${(() => {
+                  let total = 0;
+                  for (let i = 0; i < userBookings.length; i++) {
+                    total = total + userBookings[i].totalPrice;
+                  }
+                  return total;
+                })()}
               </span>
             </div>
             
