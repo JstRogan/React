@@ -45,8 +45,9 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
+    <div className="auth-page">
+      <div className="auth-container">
+        <div className="auth-card">
         <h2>{t('auth.loginTitle')}</h2>
         
         {error && <div className="error-message">{error}</div>}
@@ -84,6 +85,7 @@ const Login = () => {
         <p className="auth-link">
           {t('auth.noAccount')} <Link to="/register">{t('auth.registerLink')}</Link>
         </p>
+        </div>
       </div>
     </div>
   );

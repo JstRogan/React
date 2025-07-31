@@ -55,8 +55,9 @@ const Register = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
+    <div className="auth-page">
+      <div className="auth-container">
+        <div className="auth-card">
         <h2>{t('auth.registerTitle')}</h2>
         
         {error && <div className="error-message">{error}</div>}
@@ -118,6 +119,7 @@ const Register = () => {
         <p className="auth-link">
           {t('auth.hasAccount')} <Link to="/login">{t('auth.loginLink')}</Link>
         </p>
+        </div>
       </div>
     </div>
   );
